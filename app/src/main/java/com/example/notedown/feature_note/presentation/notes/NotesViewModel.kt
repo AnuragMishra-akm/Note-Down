@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class NoteViewModel @Inject constructor(
+class NotesViewModel @Inject constructor(
     private val noteUseCases: NotesUseCases
 ) : ViewModel() {
      private val _state = mutableStateOf(NotesState())

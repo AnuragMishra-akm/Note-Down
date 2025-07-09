@@ -27,4 +27,4 @@ data class Note(
     }
 }
 
-class InvalidNodeException(message: String): Exception(message)
+class InvalidNoteException(message: String): Exception(message)
