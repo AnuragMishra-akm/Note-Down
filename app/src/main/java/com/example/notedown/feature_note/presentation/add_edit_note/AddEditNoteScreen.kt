@@ -96,7 +96,7 @@ fun AddEditNoteScreen(
             ) {
                 Note.noteColors.forEach { color ->
                     val colorInt = color.toArgb()
-                    Box(modifier = Modifier
+                    Box(modifier = Modifier.padding(2.dp)
                                    .size(50.dp)
                                    .shadow(15.dp, CircleShape)
                                    .clip(CircleShape)
@@ -146,7 +146,7 @@ fun AddEditNoteScreen(
                     viewModel.onEvent(AddEditNoteEvent.ChangeContentFocus(it))
                 },
                 isHintVisible = contentState.isHintVisible,
-                textStyle = MaterialTheme.typography.bodyMedium,
+                textStyle = MaterialTheme.typography.bodyLarge,
                 modifier = Modifier.fillMaxHeight()
 
             )

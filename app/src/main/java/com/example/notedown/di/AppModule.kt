@@ -7,13 +7,14 @@ import com.example.notedown.feature_note.data.repository.NoteRepositoryImplement
 import com.example.notedown.feature_note.domain.repository.NoteRepository
 import com.example.notedown.feature_note.domain.use_case.AddNoteUseCase
 import com.example.notedown.feature_note.domain.use_case.DeleteNotesUseCase
+import com.example.notedown.feature_note.domain.use_case.GetNoteUseCase
 import com.example.notedown.feature_note.domain.use_case.GetNotesUseCase
 import com.example.notedown.feature_note.domain.use_case.NotesUseCases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import jakarta.inject.Singleton
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -40,7 +41,8 @@ object AppModule {
         return NotesUseCases(
             getNotesUseCase = GetNotesUseCase(repository),
             deleteNotesUseCase = DeleteNotesUseCase(repository),
-            addNoteUseCase = AddNoteUseCase(repository)
+            addNoteUseCase = AddNoteUseCase(repository),
+            getNoteUseCase = GetNoteUseCase(repository)
         )
     }
 

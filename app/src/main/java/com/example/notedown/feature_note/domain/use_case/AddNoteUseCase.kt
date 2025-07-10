@@ -1,19 +1,19 @@
 package com.example.notedown.feature_note.domain.use_case
 
-import com.example.notedown.feature_note.domain.model.InvalidNodeException
+import com.example.notedown.feature_note.domain.model.InvalidNoteException
 import com.example.notedown.feature_note.domain.model.Note
 import com.example.notedown.feature_note.domain.repository.NoteRepository
 import kotlin.jvm.Throws
 
 class AddNoteUseCase(private val repository: NoteRepository) {
-    @Throws(InvalidNodeException::class)
+    @Throws(InvalidNoteException::class)
     suspend operator fun invoke(note: Note) {
         // Add your validation logic here if needed
         if(note.title.isBlank()) {
-            throw InvalidNodeException("The title of the note can't be empty")
+            throw InvalidNoteException("The title of the note can't be empty")
         }
         if(note.content.isBlank()){
-            throw InvalidNodeException("The content of the note can't be empty")
+            throw InvalidNoteException("The content of the note can't be empty")
         }
 
         repository.insertNote(note)
